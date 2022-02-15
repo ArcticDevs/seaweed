@@ -7,6 +7,11 @@
       <div class="imgFoam">
         <lottie :options="defaultOptions.lottieOptions3" />
       </div>
+
+      <div class="section1_heading_container">
+        <h1>Let's grow some seaweed!</h1>
+        <p>Be part of the newest and more innovative way of farming.</p>
+      </div>
     </div>
     <div class="section2">
       <!-- <div class="h-100 w-100"> -->
@@ -16,7 +21,7 @@
       <div class="lanternNet1">
         <lottie :options="defaultOptions.lottieOptions4" />
       </div>
-       <div class="lanternNet2">
+      <div class="lanternNet2">
         <lottie :options="defaultOptions.lottieOptions4" />
       </div>
       <div class="bgImg">
@@ -69,6 +74,26 @@ export default {
 </script>
 
 <style scoped>
+/* import font : Bree */
+/* @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* @font-face {
+  font-family: 'Bree';
+  src: local('Bree'),
+    url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.ttf') format('ttf'),
+    url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.eot') format('eot'),
+    url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.woff') format('woff'),
+    url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.woff2') format('woff2');
+} */
+@font-face {font-family: "Bree-Bold";
+  src: url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.eot"); /* IE9*/
+  src: url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.woff2") format("woff2"), /* chrome、firefox */
+  url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.woff") format("woff"), /* chrome、firefox */
+  url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.svg#Bree-Bold") format("svg"); /* iOS 4.1- */
+}
+/* background CSS::begin */
 .section1 {
   background-image: url('../assets/images/section1Bg.png');
   background-size: cover;
@@ -82,10 +107,6 @@ export default {
   height: auto;
   width: 100%;
 }
-/* .index {
-  width: 100%;
-  height: 200vh;
-} */
 .bgImg {
   top: -22vh;
   width: 100%;
@@ -94,22 +115,23 @@ export default {
   z-index: 2;
 }
 .imgBoat {
-  /* top:25vh; */
   bottom: 35vh;
   width: 80%;
-  max-width: 1000px;
+  max-width: 900px;
   content-visibility: visible;
   position: absolute;
-  z-index: 100;
+  z-index: 200;
   right: 5vw;
 }
 .imgFoam {
-  bottom: 8vh;
   opacity: 0.1;
   width: 100%;
   content-visibility: visible;
   position: absolute;
   z-index: 100;
+  left: 0;
+  min-height: 228px;
+  bottom: 18vh;
 }
 .seaweed {
   position: absolute;
@@ -118,42 +140,98 @@ export default {
 
   width: 100% !important;
 }
-.lanternNet1{
+.lanternNet1 {
   position: absolute;
   z-index: 99;
   top: 210px;
   left: 13vw;
 }
-.lanternNet2{
+.lanternNet2 {
   position: absolute;
   z-index: 99;
-   top: 210px;
-
+  top: 210px;
   left: 27vw;
+}
+
+/* Background CSS::end */
+
+.section1_heading_container {
+  color: #fff;
+  padding-top: 20vh;
+  margin-left: 15vw;
+  max-width: 1000px;
+  z-index: 999;
+}
+.section1_heading_container > h1 {
+  font: normal normal normal 96px/90px Bree-Bold;
+  letter-spacing: 0px;
+  width: 65%;
+  min-width: 300px;
+}
+
+.section1_heading_container > p {
+  font: normal normal normal 25px/35px Montserrat;
+  width: 50%;
+  min-width: 250px;
+}
+
+/* media queries::begin */
+@media (min-width: 1850px) {
+  .imgFoam {
+    bottom: 0;
+  }
+}
+@media (max-height: 1300px) {
+  .section1_heading_container {
+    padding-top: 15vh;
+  }
+}
+
+@media (max-width: 2560px) {
+  .seaweed {
+    top: -31vh;
+  }
+  .lanternNet1 {
+    top: 120px;
+    left: 17vw;
+  }
+  .lanternNet2 {
+    top: 130px;
+  }
 }
 @media (max-width: 1450px) {
   .seaweed {
     top: -32vh;
   }
-    .lanternNet1{
-  top: 75px !important;
-  left: 11vw !important;
-
-}
-.lanternNet2{
-   top: 80px !important;
-}
-}
-@media (max-width: 2560px) {
-  .seaweed {
-    top: -31vh;
+  .lanternNet1 {
+    top: 75px !important;
+    left: 11vw !important;
   }
-    .lanternNet1{
-  top: 120px;
-  left: 17vw;
+  .lanternNet2 {
+    top: 80px !important;
+  }
+  .section1_heading_container {
+    margin-left: 100px;
+  }
+  .section1_heading_container > h1 {
+    font: normal normal bold 80px/85px Bree Serif;
+    width: 65%;
+  }
 }
-.lanternNet2{
-   top: 130px;
+@media (max-width: 920px) {
+  .section1_heading_container {
+    margin-left: 10vw;
+  }
+  .section1_heading_container > h1 {
+    font: normal normal bold 50px/55px Bree Serif;
+    width: 70%;
+    min-width: 350px;
+  }
+  .section1_heading_container > p {
+    font: normal normal normal 20px/30px Montserrat;
+    width: 65%;
+    min-width: 350px;
+  }
 }
-}
+/* media queries::end */
 </style>

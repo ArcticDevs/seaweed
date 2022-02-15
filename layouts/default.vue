@@ -1,8 +1,21 @@
 <template>
   <v-app dark>
-    <div></div>
-
-    <v-app-bar :elevation="0" fixed app> </v-app-bar>
+    <v-app-bar :elevation="0" color="transparent" fixed app>
+      <v-toolbar-title>
+        <v-img
+          src="logo.png"
+          contain
+          class="nav_logo d-none d-sm-block"
+        ></v-img>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <div class="d-flex justify-content-center align-items-center">
+        <a href="#" class="mr-4 mr-md-8 text-white">How it works?</a>
+        <a href="#" class="mr-4 mr-md-8 text-white">Our mission</a>
+        <a href="#" class="mr-4 mr-md-8 text-white">Contact</a>
+        <v-btn outlined tile dark class="mr-2 mr-md-8">Join Us</v-btn>
+      </div>
+    </v-app-bar>
     <v-main>
       <Nuxt />
     </v-main>
@@ -44,9 +57,20 @@ export default {
   width: 100%;
 }
 .v-app-bar {
-  background: transparent linear-gradient(360deg, #06a7ca00 0%, #08a7cb 100%) 0%
-    0% no-repeat padding-box;
-  opacity: 0.7;
- 
+  /* background: transparent !important; */
+  background: rgb(6, 167, 202);
+  background: linear-gradient(
+    360deg,
+    rgba(6, 167, 202, 0) 35%,
+    rgba(8, 167, 203, 1) 100%
+  );
+  /* opacity: 0.7 !important; */
+  padding: 0 10%;
+  z-index: 9999 !important;
+  height:150px !important;
+}
+
+.nav_logo {
+  height: 40px;
 }
 </style>
