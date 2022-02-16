@@ -18,6 +18,27 @@
       <div class="seaweed">
         <lottie :options="defaultOptions.lottieOptions" />
       </div>
+      <div class="section2_heading_container">
+        <div class="section2_bg"></div>
+        <div class="section2_text">
+
+        <h1>How does it work?!</h1>
+        <p>
+          Ocean farming is the method of growing seafood and other agricultural
+          crops within a body of water as large as the ocean. It involves
+          developing a system of 3D farming in the oceans that allows farmers to
+          grow multiple types of seafood and traditional agricultural produce in
+          the same location.
+        </p>
+        <p>
+          Currently, shellfish is being widely grown in ocean farms around the
+          world as their demand is on the higher end of the scale as well. The
+          industry, however, is expected to grow and diversify in the near
+          future, and will include numerous other types of seafood as well.
+        </p>
+        </div>
+
+      </div>
       <div class="lanternNet1">
         <lottie :options="defaultOptions.lottieOptions4" />
       </div>
@@ -28,6 +49,7 @@
         <lottie :options="defaultOptions.lottieOptions1" />
       </div>
     </div>
+    <div class="Gradient"></div>
 
     <!-- </div>
     <div class="h-100 w-100"> -->
@@ -85,15 +107,39 @@ export default {
     url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.woff') format('woff'),
     url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.woff2') format('woff2');
 } */
-@font-face {font-family: "Bree-Bold";
-  src: url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.eot"); /* IE9*/
-  src: url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.woff2") format("woff2"), /* chrome、firefox */
-  url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.woff") format("woff"), /* chrome、firefox */
-  url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url("../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.svg#Bree-Bold") format("svg"); /* iOS 4.1- */
+@font-face {
+  font-family: 'Bree-Bold';
+  src: url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.eot'); /* IE9*/
+  src: url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.woff2')
+      format('woff2'),
+    /* chrome、firefox */
+      url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.woff')
+      format('woff'),
+    /* chrome、firefox */
+      url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.ttf')
+      format('truetype'),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url('../assets/fonts/Bree-Bold/@font-face/1e1ee1ec762e9ee51ae4633db26665fd.svg#Bree-Bold')
+      format('svg'); /* iOS 4.1- */
 }
 /* background CSS::begin */
+.index {
+  position: relative;
+}
+.Gradient {
+  position: absolute;
+  height: 300vh;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 212, 229, 1) 26%,
+    rgba(19, 100, 155, 1) 65%,
+    rgba(20, 45, 118, 1) 100%
+  );
+}
 .section1 {
   background-image: url('../assets/images/section1Bg.png');
   background-size: cover;
@@ -137,7 +183,8 @@ export default {
   position: absolute;
   z-index: 99;
   top: -38vh;
-
+  margin: 0;
+  padding: 0;
   width: 100% !important;
 }
 .lanternNet1 {
@@ -174,6 +221,33 @@ export default {
   width: 50%;
   min-width: 250px;
 }
+/* SECTION 2 */
+
+.section2_heading_container {
+  color: #fff;
+  padding-top: 20vh;
+  margin-left: 15vw;
+  max-width: 1000px;
+  z-index: 999;
+  position: relative;
+  height: 40%;
+  width: 30%;
+
+  /* backdrop-filter: blur(40px) !important; */
+
+}
+.section2_text{
+  position: relative;
+
+}
+.section2_bg{
+  filter: blur(40px);
+  height: 100%;
+    background: transparent linear-gradient(180deg, #00d4e5 0%, #01c8dd 100%);
+  opacity: 0.95;
+  width: 100%;
+  position: absolute;
+}
 
 /* media queries::begin */
 @media (min-width: 1850px) {
@@ -199,6 +273,11 @@ export default {
     top: 130px;
   }
 }
+@media (max-width: 2000px) {
+  .Gradient {
+    width: 607vh;
+  }
+}
 @media (max-width: 1450px) {
   .seaweed {
     top: -32vh;
@@ -214,7 +293,7 @@ export default {
     margin-left: 100px;
   }
   .section1_heading_container > h1 {
-    font: normal normal bold 80px/85px Bree Serif;
+    font: normal normal bold 80px/85px Bree-Bold;
     width: 65%;
   }
 }
@@ -223,7 +302,7 @@ export default {
     margin-left: 10vw;
   }
   .section1_heading_container > h1 {
-    font: normal normal bold 50px/55px Bree Serif;
+    font: normal normal bold 50px/55px Bree-Bold;
     width: 70%;
     min-width: 350px;
   }
