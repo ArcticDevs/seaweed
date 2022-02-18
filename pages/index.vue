@@ -15,35 +15,106 @@
     </div>
     <div class="section2">
       <!-- <div class="h-100 w-100"> -->
-      <div class="seaweed">
-        <lottie :options="defaultOptions.lottieOptions" />
-      </div>
-      <div class="section2_heading_container">
-        <div class="section2_bg"></div>
-        <div class="section2_text">
-
-        <h1>How does it work?!</h1>
-        <p>
-          Ocean farming is the method of growing seafood and other agricultural
-          crops within a body of water as large as the ocean. It involves
-          developing a system of 3D farming in the oceans that allows farmers to
-          grow multiple types of seafood and traditional agricultural produce in
-          the same location.
-        </p>
-        <p>
-          Currently, shellfish is being widely grown in ocean farms around the
-          world as their demand is on the higher end of the scale as well. The
-          industry, however, is expected to grow and diversify in the near
-          future, and will include numerous other types of seafood as well.
-        </p>
-        </div>
-
-      </div>
       <div class="lanternNet1">
         <lottie :options="defaultOptions.lottieOptions4" />
       </div>
       <div class="lanternNet2">
         <lottie :options="defaultOptions.lottieOptions4" />
+      </div>
+      <div class="seaweed">
+        <lottie :options="defaultOptions.lottieOptions" />
+      </div>
+      <div class="seaweedFoam">
+        <lottie :options="defaultOptions.lottieOptions5" />
+      </div>
+      <div class="section2_heading_container">
+        <div class="section2_bg"></div>
+        <div class="section2_text">
+          <h1>How does it work?!</h1>
+          <p>
+            Ocean farming is the method of growing seafood and other
+            agricultural crops within a body of water as large as the ocean. It
+            involves developing a system of 3D farming in the oceans that allows
+            farmers to grow multiple types of seafood and traditional
+            agricultural produce in the same location.
+          </p>
+          <p>
+            Currently, shellfish is being widely grown in ocean farms around the
+            world as their demand is on the higher end of the scale as well. The
+            industry, however, is expected to grow and diversify in the near
+            future, and will include numerous other types of seafood as well.
+          </p>
+        </div>
+      </div>
+      <div class="seaweedBubble">
+        <lottie :options="defaultOptions.lottieOptions6" />
+      </div>
+
+      <div class="section2_our_mission">
+        <h4 class="text-center mb-13">KELPS</h4>
+        <div class="section2_text">
+          <h1>Our mision</h1>
+          <p>
+            We start seaweed farms around the world to create jobs, food and
+            reduce the amount of carbon in the atmosphere. We invest in people
+            starting seaweed farms and track everything with Web3 protocols. We
+            target the cryptocurrency industry and operate as a Decentralize
+            Autonomous Organizations.
+          </p>
+        </div>
+      </div>
+      <div class="seaweedFish">
+        <lottie :options="defaultOptions.lottieOptions7" />
+      </div>
+      <div class="section2_LatestNew_carousel ">
+        <h1>Latest News</h1>
+        <carousel :dots="false" :number="4" >
+          <div class="customCarousel">
+            <v-img
+              height="250"
+              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+            ></v-img>
+
+            <p class="pa-5">
+              Small plates, salads & sandwiches - an intimate setting with 12
+              indoor seats plus patio seating.
+            </p>
+          </div>
+          <div class="customCarousel">
+            <v-img
+              height="250"
+              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+            ></v-img>
+
+            <p class="pa-5">
+              Small plates, salads & sandwiches - an intimate setting with 12
+              indoor seats plus patio seating.
+            </p>
+          </div>
+          <div class="customCarousel">
+            <v-img
+              height="250"
+              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+            ></v-img>
+
+            <p class="pa-5">
+              Small plates, salads & sandwiches - an intimate setting with 12
+              indoor seats plus patio seating.
+            </p>
+          </div>
+           <div class="customCarousel">
+            <v-img
+              height="250"
+              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+            ></v-img>
+
+            <p class="pa-5">
+              Small plates, salads & sandwiches - an intimate setting with 12
+              indoor seats plus patio seating.
+            </p>
+          </div>
+            
+        </carousel>
       </div>
       <div class="bgImg">
         <lottie :options="defaultOptions.lottieOptions1" />
@@ -59,17 +130,22 @@
 </template>
 
 <script>
+import carousel from 'vue-owl-carousel'
 import lottie from 'vue-lottie'
 import * as animationData from '../assets/animation/seaweed_farm_structure_animation.json'
 import * as animationData1 from '../assets/animation/main_sea_animation.json'
 import * as animationData2 from '../assets/animation/ship_animation.json'
 import * as animationData3 from '../assets/animation/sea_foam_animation.json'
 import * as animationData4 from '../assets/animation/lanternCuston1.json'
+import * as animationData5 from '../assets/animation/sea_light_animation.json'
+import * as animationData6 from '../assets/animation/bubbles_animation.json'
+import * as animationData7 from '../assets/animation/animation_fish.json'
 
 export default {
   name: 'IndexPage',
   components: {
     lottie,
+    carousel,
   },
   data() {
     return {
@@ -89,6 +165,15 @@ export default {
         lottieOptions4: {
           animationData: animationData4.default,
         },
+        lottieOptions5: {
+          animationData: animationData5.default,
+        },
+        lottieOptions6: {
+          animationData: animationData6.default,
+        },
+        lottieOptions7: {
+          animationData: animationData7.default,
+        },
       },
     }
   },
@@ -99,6 +184,8 @@ export default {
 /* import font : Bree */
 /* @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@500&family=Raleway:wght@500&display=swap');
+
 /* @font-face {
   font-family: 'Bree';
   src: local('Bree'),
@@ -126,6 +213,13 @@ export default {
       format('svg'); /* iOS 4.1- */
 }
 /* background CSS::begin */
+h1 {
+  font: normal normal bold 96px/86px Bree;
+  color: #fff;
+}
+h4 {
+  font: italic normal 300 25px/35px Montserrat;
+}
 .index {
   position: relative;
 }
@@ -187,16 +281,77 @@ export default {
   padding: 0;
   width: 100% !important;
 }
+.seaweedFoam {
+  position: absolute;
+  z-index: 9;
+  top: -22vh;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  opacity: 0.3;
+}
+.seaweedBubble {
+  position: absolute;
+  z-index: 9;
+  /* top: -22vh; */
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  opacity: 0.3;
+}
+.seaweedFish {
+  position: absolute;
+  z-index: 9;
+  margin-top: -50vh;
+  /* top: 200px; */
+  /* margin: 0; */
+  padding: 0;
+  width: 100% !important;
+  opacity: 0.3;
+}
+.section2_LatestNew_carousel {
+  z-index: 99;
+  position: relative;
+  overflow: hidden;
+  height: 80%;
+  width: 100%;
+  padding-top: 20vh;
+  left: 10vw;
+}
+.customCarousel {
+  height: 50%;
+  max-width: 300px !important;
+  z-index: 999;
+  background: #0C6BA0 ;
+  opacity: .9;
+  font: normal normal 300 15px/20px Montserrat;
+  color: #fff;
+}
+.prev{
+  position: relative;
+  top: -10vh;
+  left: 70vw;
+  font: 30px;
+}
+/* .next{
+  position: relative;
+  top: -7vh;
+  left: 80vw;
+} */
 .lanternNet1 {
   position: absolute;
   z-index: 99;
-  top: 210px;
+  /* top: 310px; */
+  /* top: 10vh; */
+  margin-top: 180px;
   left: 13vw;
 }
 .lanternNet2 {
   position: absolute;
   z-index: 99;
-  top: 210px;
+  /* top: 210px; */
+  margin-top: 180px;
+
   left: 27vw;
 }
 
@@ -225,7 +380,7 @@ export default {
 
 .section2_heading_container {
   color: #fff;
-  padding-top: 20vh;
+  padding-top: 30vh;
   margin-left: 15vw;
   max-width: 1000px;
   z-index: 999;
@@ -234,27 +389,33 @@ export default {
   width: 30%;
 
   /* backdrop-filter: blur(40px) !important; */
-
 }
-.section2_text{
+.section2_text {
   position: relative;
-
 }
-.section2_bg{
+.section2_bg {
   filter: blur(40px);
   height: 100%;
-    background: transparent linear-gradient(180deg, #00d4e5 0%, #01c8dd 100%);
+  background: transparent linear-gradient(180deg, #00d4e5 0%, #01c8dd 100%);
   opacity: 0.95;
   width: 100%;
   position: absolute;
 }
 
-/* media queries::begin */
-@media (min-width: 1850px) {
-  .imgFoam {
-    bottom: 0;
-  }
+.section2_our_mission {
+  left: 52%;
+  color: #fff;
+  padding-top: 70vh;
+  margin-right: 0;
+  max-width: 1000px;
+  z-index: 999;
+  position: relative;
+  height: 40%;
+  width: 40%;
 }
+
+/* media queries::begin */
+
 @media (max-height: 1300px) {
   .section1_heading_container {
     padding-top: 15vh;
@@ -262,33 +423,21 @@ export default {
 }
 
 @media (max-width: 2560px) {
-  .seaweed {
+  /* .seaweed {
     top: -31vh;
-  }
-  .lanternNet1 {
-    top: 120px;
-    left: 17vw;
-  }
-  .lanternNet2 {
-    top: 130px;
-  }
+  } */
 }
-@media (max-width: 2000px) {
-  .Gradient {
-    width: 607vh;
+
+@media (min-width: 1850px) {
+  .imgFoam {
+    bottom: 0;
   }
 }
 @media (max-width: 1450px) {
-  .seaweed {
+  /* .seaweed {
     top: -32vh;
-  }
-  .lanternNet1 {
-    top: 75px !important;
-    left: 11vw !important;
-  }
-  .lanternNet2 {
-    top: 80px !important;
-  }
+  } */
+
   .section1_heading_container {
     margin-left: 100px;
   }
