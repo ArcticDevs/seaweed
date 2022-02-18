@@ -71,7 +71,7 @@
         <carousel :dots="false" :number="4" >
           <div class="customCarousel">
             <v-img
-              height="250"
+              height="150"
               src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
             ></v-img>
 
