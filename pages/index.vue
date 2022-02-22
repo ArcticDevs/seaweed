@@ -66,9 +66,19 @@
       <div class="seaweedFish">
         <lottie :options="defaultOptions.lottieOptions7" />
       </div>
-      <div class="section2_LatestNew_carousel ">
+      <div class="section2_LatestNew_carousel">
         <h1>Latest News</h1>
-        <carousel :dots="false" :number="4" >
+        <carousel :dots="false" :number="4">
+          <template slot="prev">
+            <v-icon large color="orange darken-2">
+              mdi-arrow-up-bold-box-outline
+            </v-icon>
+          </template>
+          <template slot="next">
+            <v-icon large color="orange darken-2">
+              mdi-arrow-up-bold-box-outline
+            </v-icon>
+          </template>
           <div class="customCarousel">
             <v-img
               height="150"
@@ -82,7 +92,7 @@
           </div>
           <div class="customCarousel">
             <v-img
-              height="250"
+              height="150"
               src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
             ></v-img>
 
@@ -93,7 +103,7 @@
           </div>
           <div class="customCarousel">
             <v-img
-              height="250"
+              height="150"
               src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
             ></v-img>
 
@@ -102,9 +112,9 @@
               indoor seats plus patio seating.
             </p>
           </div>
-           <div class="customCarousel">
+          <div class="customCarousel">
             <v-img
-              height="250"
+              height="150"
               src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
             ></v-img>
 
@@ -113,8 +123,37 @@
               indoor seats plus patio seating.
             </p>
           </div>
-            
         </carousel>
+      </div>
+      <div class="section2_stats_container">
+        <h1 class="text-center">Trust the stats</h1>
+        <v-row>
+          <v-col cols="4">
+            <lottie :options="defaultOptions.lottieOptions8" />
+            <div class="section2_stats_text">
+              <h3>25%</h3>
+              <h4>More Seaweed</h4>
+              <p>Produce more with our software.</p>
+            </div>
+          </v-col>
+        
+          <v-col cols="4">
+            <lottie :options="defaultOptions.lottieOptions8" />
+            <div class="section2_stats_text">
+              <h3>50%</h3>
+              <h4>More Fish</h4>
+              <p>Catch more with our software.</p>
+            </div>
+          </v-col>
+            <v-col cols="4">
+            <lottie :options="defaultOptions.lottieOptions8" />
+            <div class="section2_stats_text">
+              <h3>35%</h3>
+              <h4>More Shelfish</h4>
+              <p>Catch more with our software.</p>
+            </div>
+          </v-col>
+        </v-row>
       </div>
       <div class="bgImg">
         <lottie :options="defaultOptions.lottieOptions1" />
@@ -140,6 +179,7 @@ import * as animationData4 from '../assets/animation/lanternCuston1.json'
 import * as animationData5 from '../assets/animation/sea_light_animation.json'
 import * as animationData6 from '../assets/animation/bubbles_animation.json'
 import * as animationData7 from '../assets/animation/animation_fish.json'
+import * as animationData8 from '../assets/animation/stats_animation.json'
 
 export default {
   name: 'IndexPage',
@@ -173,6 +213,9 @@ export default {
         },
         lottieOptions7: {
           animationData: animationData7.default,
+        },
+        lottieOptions8: {
+          animationData: animationData8.default,
         },
       },
     }
@@ -225,8 +268,9 @@ h4 {
 }
 .Gradient {
   position: absolute;
-  height: 300vh;
+  height: 530vh;
   width: 100%;
+  top: 110vh;
   background: linear-gradient(
     180deg,
     rgba(0, 212, 229, 1) 26%,
@@ -322,12 +366,12 @@ h4 {
   height: 50%;
   max-width: 300px !important;
   z-index: 999;
-  background: #0C6BA0 ;
-  opacity: .9;
+  background: #0c6ba0;
+  opacity: 0.9;
   font: normal normal 300 15px/20px Montserrat;
   color: #fff;
 }
-.prev{
+.prev {
   position: relative;
   top: -10vh;
   left: 70vw;
@@ -338,6 +382,31 @@ h4 {
   top: -7vh;
   left: 80vw;
 } */
+.section2_stats_container {
+  position: relative;
+  z-index: 99;
+}
+.section2_stats_text {
+  position: absolute;
+  color: #fff;
+  font-family: Montserrat;
+  bottom: 80px;
+  padding-left: 40px;
+  text-align: center;
+}
+.section2_stats_text >>> h3 {
+  font: normal normal 600 96px/86px Montserrat;
+  margin-right: 10px;
+}
+.section2_stats_text >>> h4 {
+  font: normal normal 600 37px/32px Montserrat;
+  margin-right: 20px;
+  padding-top: 30px;
+}
+.section2_stats_text >>> p {
+  font: normal normal 300 24px/28px Montserrat;
+  margin-right: 10px;
+}
 .lanternNet1 {
   position: absolute;
   z-index: 99;
@@ -412,6 +481,12 @@ h4 {
   position: relative;
   height: 40%;
   width: 40%;
+}
+
+/* CAROUCEL */
+.prevBtn,
+.nextBtn {
+  position: absolute;
 }
 
 /* media queries::begin */
