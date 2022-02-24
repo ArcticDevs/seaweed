@@ -70,14 +70,10 @@
         <h1>Latest News</h1>
         <carousel :dots="false" :number="4">
           <template slot="prev">
-            <v-icon class="prevBtn" larger >
-              mdi-arrow-left
-            </v-icon>
+            <v-icon class="prevBtn" larger> mdi-arrow-left </v-icon>
           </template>
           <template slot="next">
-            <v-icon class="nextBtn" larger >
-              mdi-arrow-right
-            </v-icon>
+            <v-icon class="nextBtn" larger> mdi-arrow-right </v-icon>
           </template>
           <div class="customCarousel">
             <v-img
@@ -127,47 +123,104 @@
       </div>
       <div class="section2_stats_container">
         <v-container>
-        <h1 class="text-center">Trust the stats</h1>
-          
-        <v-row>
-          <v-col cols="4">
-            <lottie :options="defaultOptions.lottieOptions8" />
-            <div class="section2_stats_text">
-              <h3>25%</h3>
-              <h4>More Seaweed</h4>
-              <p>Produce more with our software.</p>
-            </div>
-          </v-col>
+          <h1 class="text-center">Trust the stats</h1>
 
-          <v-col cols="4">
-            <lottie :options="defaultOptions.lottieOptions8" />
-            <div class="section2_stats_text">
-              <h3>50%</h3>
-              <h4>More Fish</h4>
-              <p>Catch more with our software.</p>
-            </div>
-          </v-col>
-          <v-col cols="4">
-            <lottie :options="defaultOptions.lottieOptions8" />
-            <div class="section2_stats_text">
-              <h3>35%</h3>
-              <h4>More Shelfish</h4>
-              <p>Catch more with our software.</p>
-            </div>
-          </v-col>
-        </v-row>
+          <v-row>
+            <v-col cols="4">
+              <lottie :options="defaultOptions.lottieOptions8" />
+              <div class="section2_stats_text">
+                <h3>25%</h3>
+                <h4>More Seaweed</h4>
+                <p>Produce more with our software.</p>
+              </div>
+            </v-col>
+
+            <v-col cols="4">
+              <lottie :options="defaultOptions.lottieOptions8" />
+              <div class="section2_stats_text">
+                <h3>50%</h3>
+                <h4>More Fish</h4>
+                <p>Catch more with our software.</p>
+              </div>
+            </v-col>
+            <v-col cols="4">
+              <lottie :options="defaultOptions.lottieOptions8" />
+              <div class="section2_stats_text">
+                <h3>35%</h3>
+                <h4>More Shelfish</h4>
+                <p>Catch more with our software.</p>
+              </div>
+            </v-col>
+          </v-row>
         </v-container>
+      </div>
 
+      <div class="cageBgImgBottom">
+        <div class="seaweedBubbleBottom">
+          <lottie :options="defaultOptions.lottieOptions6" />
+        </div>
       </div>
-       <div class="seaweedBubble">
-        <lottie :options="defaultOptions.lottieOptions6" />
-      </div>
-     <div class="cageBgImg">
-      
-     </div>
       <div class="bgImg">
         <lottie :options="defaultOptions.lottieOptions1" />
       </div>
+    </div>
+
+    <div class="contactForm">
+      <v-container class="contactFormContainer">
+        <h1>Get in touch!</h1>
+        <v-row>
+          <v-col cols="12" sm="6" md="6">
+            <v-text-field
+              dark
+              hide-details
+              label="First Name"
+              outlined
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12" sm="6" md="6">
+            <v-text-field
+              label="Last Name"
+              dark
+              outlined
+              hide-details
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12" sm="6" md="6">
+            <v-text-field
+              dark
+              label="Phone number"
+              hide-details
+              outlined
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12" sm="6" md="6">
+            <v-text-field
+              dark
+              hide-details
+              label="Email address"
+              outlined
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" md="12">
+            <v-textarea
+              outlined
+              name="input"
+              dark
+              label="Enter text"
+            ></v-textarea>
+          </v-col>
+          <v-btn class="mx-auto" outlined dark> Submit Now </v-btn>
+        </v-row>
+        <v-row>
+          <v-col class="footerCustom" cols="12" md="3"> <v-icon dark size="40" > mdi-map-marker</v-icon> 123, Lorem Ipum dolor way, Los Angeles, CA 123456 </v-col>
+          <v-col class="footerCustom" cols="12" md="3"> <v-icon dark size="40">mdi-phone</v-icon> 925 407 3102 </v-col>
+          <v-col class="footerCustom" cols="12" md="3"> <v-icon dark size="40"> mdi-email </v-icon> info@seaweeddao.com </v-col>
+          <v-col  class="footerCustom" cols="12" md="3"> <v-icon dark size="40" > mdi-facebook</v-icon>  <v-icon dark  size="40" class="mr-2 ml-2" >mdi-twitter</v-icon>  <v-icon dark size="40">mdi-instagram</v-icon> </v-col>
+        </v-row>
+      </v-container>
     </div>
     <div class="Gradient"></div>
 
@@ -275,6 +328,8 @@ h4 {
 }
 .index {
   position: relative;
+  max-height: 720vh;
+  overflow: hidden;
 }
 .Gradient {
   position: absolute;
@@ -353,6 +408,15 @@ h4 {
   width: 100% !important;
   opacity: 0.3;
 }
+.seaweedBubbleBottom {
+  position: absolute;
+  z-index: 99;
+  top: -100vh;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  opacity: 0.3;
+}
 .seaweedFish {
   position: absolute;
   z-index: 9;
@@ -405,13 +469,13 @@ h4 {
   z-index: 99;
   margin-top: 100px;
 }
-.section2_stats_container >>> h1{
+.section2_stats_container >>> h1 {
   font: normal normal bold 96px/86px Bree;
 }
-.section2_stats_container >>> h4{
+.section2_stats_container >>> h4 {
   font: normal normal 600 37px/32px Montserrat;
-} 
-.section2_stats_container >>> p{
+}
+.section2_stats_container >>> p {
   font: normal normal 300 24px/28px Montserrat;
 }
 
@@ -513,10 +577,9 @@ h4 {
   width: 40%;
 }
 
-
-.cageBgImg{
+.cageBgImgBottom {
   position: absolute;
-  bottom: -345vh;
+  bottom: -341vh;
   /* top: 0; */
   background-image: url('../assets/images/botton_1.png');
   object-fit: cover;
@@ -527,8 +590,31 @@ h4 {
   left: -160px;
   /* padding-bottom: -150px; */
 }
-/* CAROUCEL */
 
+.contactForm {
+  background: #192f66;
+  justify-content: center;
+  position: relative;
+  height: 110vh;
+  width: 100%;
+  z-index: 999;
+  margin-top: 130vh;
+  justify-items: center;
+  text-align: center;
+}
+.contactFormContainer {
+  padding-top: 15vh;
+}
+
+.contactFormContainer >>> .textFieldCustom .v-text-field__slot input {
+  border: #fff !important;
+  color: #fff;
+}
+.footerCustom{
+  color: #fff;
+  font: normal normal 300 15px Montserrat;
+}
+/* CAROUCEL */
 
 /* media queries::begin */
 
