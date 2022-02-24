@@ -68,7 +68,7 @@
       </div>
       <div class="section2_LatestNew_carousel">
         <h1>Latest News</h1>
-        <carousel :dots="false" :number="4">
+        <carousel :dots="false" :nav="false" :number="4">
           <template slot="prev">
             <v-icon class="prevBtn" larger> mdi-arrow-left </v-icon>
           </template>
@@ -215,10 +215,21 @@
           <v-btn class="mx-auto" outlined dark> Submit Now </v-btn>
         </v-row>
         <v-row>
-          <v-col class="footerCustom" cols="12" md="3"> <v-icon dark size="40" > mdi-map-marker</v-icon> 123, Lorem Ipum dolor way, Los Angeles, CA 123456 </v-col>
-          <v-col class="footerCustom" cols="12" md="3"> <v-icon dark size="40">mdi-phone</v-icon> 925 407 3102 </v-col>
-          <v-col class="footerCustom" cols="12" md="3"> <v-icon dark size="40"> mdi-email </v-icon> info@seaweeddao.com </v-col>
-          <v-col  class="footerCustom" cols="12" md="3"> <v-icon dark size="40" > mdi-facebook</v-icon>  <v-icon dark  size="40" class="mr-2 ml-2" >mdi-twitter</v-icon>  <v-icon dark size="40">mdi-instagram</v-icon> </v-col>
+          <v-col class="footerCustom" cols="12" md="3">
+            <v-icon dark size="40"> mdi-map-marker</v-icon> 123, Lorem Ipum
+            dolor way, Los Angeles, CA 123456
+          </v-col>
+          <v-col class="footerCustom" cols="12" md="3">
+            <v-icon dark size="40">mdi-phone</v-icon> 925 407 3102
+          </v-col>
+          <v-col class="footerCustom" cols="12" md="3">
+            <v-icon dark size="40"> mdi-email </v-icon> info@seaweeddao.com
+          </v-col>
+          <v-col class="footerCustom" cols="12" md="3">
+            <v-icon dark size="40"> mdi-facebook</v-icon>
+            <v-icon dark size="40" class="mr-2 ml-2">mdi-twitter</v-icon>
+            <v-icon dark size="40">mdi-instagram</v-icon>
+          </v-col>
         </v-row>
       </v-container>
     </div>
@@ -380,7 +391,7 @@ h4 {
   z-index: 100;
   left: 0;
   min-height: 228px;
-  bottom: 18vh;
+  bottom: 15vh;
 }
 .seaweed {
   position: absolute;
@@ -610,7 +621,7 @@ h4 {
   border: #fff !important;
   color: #fff;
 }
-.footerCustom{
+.footerCustom {
   color: #fff;
   font: normal normal 300 15px Montserrat;
 }
@@ -618,21 +629,36 @@ h4 {
 
 /* media queries::begin */
 
+@media (min-width: 2000px) {
+  .index {
+    height: 670vh;
+  }
+  .section2_our_mission {
+    padding-top: 100vh;
+  }
+  .section2_stats_text {
+    bottom: 120px;
+    margin-left: 101px;
+  }
+  .cageBgImgBottom{
+  bottom: -361vh;
+    
+  }
+  .contactForm {
+    /* height: 120vh; */
+  margin-top: 140vh;
+
+  }
+}
 @media (max-height: 1300px) {
   .section1_heading_container {
     padding-top: 15vh;
   }
 }
 
-@media (max-width: 2560px) {
-  /* .seaweed {
-    top: -31vh;
-  } */
-}
-
 @media (min-width: 1850px) {
   .imgFoam {
-    bottom: 0;
+    bottom: 10vh;
   }
 }
 @media (max-width: 1450px) {
