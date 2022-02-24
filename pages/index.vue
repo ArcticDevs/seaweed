@@ -70,13 +70,13 @@
         <h1>Latest News</h1>
         <carousel :dots="false" :number="4">
           <template slot="prev">
-            <v-icon large color="orange darken-2">
-              mdi-arrow-up-bold-box-outline
+            <v-icon class="prevBtn" larger >
+              mdi-arrow-left
             </v-icon>
           </template>
           <template slot="next">
-            <v-icon large color="orange darken-2">
-              mdi-arrow-up-bold-box-outline
+            <v-icon class="nextBtn" larger >
+              mdi-arrow-right
             </v-icon>
           </template>
           <div class="customCarousel">
@@ -126,7 +126,9 @@
         </carousel>
       </div>
       <div class="section2_stats_container">
+        <v-container>
         <h1 class="text-center">Trust the stats</h1>
+          
         <v-row>
           <v-col cols="4">
             <lottie :options="defaultOptions.lottieOptions8" />
@@ -136,7 +138,7 @@
               <p>Produce more with our software.</p>
             </div>
           </v-col>
-        
+
           <v-col cols="4">
             <lottie :options="defaultOptions.lottieOptions8" />
             <div class="section2_stats_text">
@@ -145,7 +147,7 @@
               <p>Catch more with our software.</p>
             </div>
           </v-col>
-            <v-col cols="4">
+          <v-col cols="4">
             <lottie :options="defaultOptions.lottieOptions8" />
             <div class="section2_stats_text">
               <h3>35%</h3>
@@ -154,7 +156,15 @@
             </div>
           </v-col>
         </v-row>
+        </v-container>
+
       </div>
+       <div class="seaweedBubble">
+        <lottie :options="defaultOptions.lottieOptions6" />
+      </div>
+     <div class="cageBgImg">
+      
+     </div>
       <div class="bgImg">
         <lottie :options="defaultOptions.lottieOptions1" />
       </div>
@@ -371,11 +381,19 @@ h4 {
   font: normal normal 300 15px/20px Montserrat;
   color: #fff;
 }
-.prev {
-  position: relative;
-  top: -10vh;
-  left: 70vw;
-  font: 30px;
+.prevBtn {
+  color: #077499;
+  font-size: 76px;
+  position: absolute;
+  top: 28%;
+  left: 70%;
+}
+.nextBtn {
+  color: #077499;
+  font-size: 76px;
+  position: absolute;
+  top: 28%;
+  left: 80%;
 }
 /* .next{
   position: relative;
@@ -385,14 +403,26 @@ h4 {
 .section2_stats_container {
   position: relative;
   z-index: 99;
+  margin-top: 100px;
 }
+.section2_stats_container >>> h1{
+  font: normal normal bold 96px/86px Bree;
+}
+.section2_stats_container >>> h4{
+  font: normal normal 600 37px/32px Montserrat;
+} 
+.section2_stats_container >>> p{
+  font: normal normal 300 24px/28px Montserrat;
+}
+
 .section2_stats_text {
   position: absolute;
   color: #fff;
-  font-family: Montserrat;
-  bottom: 80px;
-  padding-left: 40px;
+  /* font-family: Montserrat; */
+  bottom: 10px;
+  /* padding-left: 15px; */
   text-align: center;
+  margin-left: 10px;
 }
 .section2_stats_text >>> h3 {
   font: normal normal 600 96px/86px Montserrat;
@@ -483,11 +513,22 @@ h4 {
   width: 40%;
 }
 
-/* CAROUCEL */
-.prevBtn,
-.nextBtn {
+
+.cageBgImg{
   position: absolute;
+  bottom: -345vh;
+  /* top: 0; */
+  background-image: url('../assets/images/botton_1.png');
+  object-fit: cover;
+  z-index: 9;
+  height: 100%;
+  overflow: hidden;
+  width: 120%;
+  left: -160px;
+  /* padding-bottom: -150px; */
 }
+/* CAROUCEL */
+
 
 /* media queries::begin */
 
