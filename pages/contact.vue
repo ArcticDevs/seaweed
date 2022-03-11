@@ -2,7 +2,7 @@
   <div class="mainContainer">
     <div class="section">
       <h1>Grow SeaWeed</h1>
-      <v-carousel v-model="model" class="h-100">
+      <!-- <v-carousel v-model="model" class="h-100">
         <v-carousel-item v-for="(color, i) in colors" :key="color">
           <v-sheet :color="color" height="100%" tile>
             <v-row class="fill-height" align="center" justify="center">
@@ -10,54 +10,114 @@
             </v-row>
           </v-sheet>
         </v-carousel-item>
-      </v-carousel>
+      </v-carousel> -->
+      <carousel-3d
+        class="threeDCaroucel"
+        :loop="true"
+        :autoplay="true"
+        :height="450"
+        :space="550"
+        :animationSpeed="400"
+      >
+        <slide class="threeDCaroucelSlide" :index="0">
+          <img
+            src="../assets/images/profileimgCaroucel-removebg-preview.png"
+            alt=""
+            srcset=""
+          />
+        </slide>
+        <slide class="threeDCaroucelSlide" :index="1">
+          <img
+            src="../assets/images/profileimgCaroucel-removebg-preview.png"
+            alt=""
+            srcset=""
+          />
+        </slide>
+        <slide class="threeDCaroucelSlide" :index="2">
+          <img
+            src="../assets/images/profileimgCaroucel-removebg-preview.png"
+            alt=""
+            srcset=""
+          />
+        </slide>
+        <slide class="threeDCaroucelSlide" :index="3">
+          <img
+            src="../assets/images/profileimgCaroucel-removebg-preview.png"
+            alt=""
+            srcset=""
+          />
+        </slide>
+        <slide class="threeDCaroucelSlide" :index="4">
+          <img
+            src="../assets/images/profileimgCaroucel-removebg-preview.png"
+            alt=""
+            srcset=""
+          />
+        </slide>
+      </carousel-3d>
     </div>
     <div class="section">
       <v-row>
         <v-col cols="6" md="6" sm="12">
           <div class="details2Section">
-            <v-list three-line>
-              <template v-for="(item, index) in items">
-                <v-subheader
-                  v-if="item.header"
-                  :key="item.header"
-                  v-text="item.header"
-                ></v-subheader>
-
-                <v-divider
-                  v-else-if="item.divider"
-                  :key="index"
-                  :inset="item.inset"
-                  style="display: none"
-                ></v-divider>
-
-                <v-list-item v-else :key="item.title">
-                  <v-list-item-avatar size="40">
-                    <!-- <v-img :src="item.avatar"></v-img> -->
-                    <v-img
-                      :src="`https://picsum.photos/500/300?image=${
-                        index * 5 + 10
-                      }`"
-                      :lazy-src="`https://picsum.photos/10/6?image=${
-                        index * 5 + 10
-                      }`"
-                      aspect-ratio="1"
-                      class="grey lighten-2"
-                    ></v-img>
-                  </v-list-item-avatar>
-
-                  <v-list-item-content class="pa-3 mb-5">
-                    <v-list-item-title
-                      style="font-weight: bold"
-                      v-html="item.title"
-                    ></v-list-item-title>
-                    <v-list-item-subtitle
-                      v-html="item.subtitle"
-                    ></v-list-item-subtitle>
-                  </v-list-item-content>
-                </v-list-item>
-              </template>
-            </v-list>
+            <v-col cols="12" style="display: flex; flex-direction: row">
+              <v-img
+                src="https://picsum.photos/500/300?image=3"
+                lazy-src="https://picsum.photos/10/6?image=3"
+                aspect-ratio="1"
+                class="grey section2Img lighten-2"
+              ></v-img>
+              <div class="section2text">
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting
+                </p>
+              </div>
+            </v-col>
+            <v-col
+              cols="12"
+              style="
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+                vertical-align: middle;
+              "
+            >
+              <v-img
+                src="https://picsum.photos/500/300?image=1"
+                lazy-src="https://picsum.photos/10/6?image=1"
+                aspect-ratio="1"
+                class="grey section2Img lighten-2"
+              ></v-img>
+              <div class="section2text">
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting
+                </p>
+              </div>
+            </v-col>
+            <v-col
+              cols="12"
+              style="
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+                vertical-align: middle;
+              "
+            >
+              <v-img
+                src="https://picsum.photos/500/300?image=2"
+                lazy-src="https://picsum.photos/10/6?image=2"
+                aspect-ratio="1"
+                class="grey section2Img lighten-2"
+              ></v-img>
+              <div class="section2text">
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting
+                </p>
+              </div>
+            </v-col>
           </div>
         </v-col>
         <v-col cols="6" md="6" sm="12">
@@ -101,7 +161,7 @@
           </div>
         </v-col>
         <v-col cols="6" md="6" sm="12">
-          <div class="details2Section">
+          <div class="details5Section">
             <v-container>
               <h1>John Doe</h1>
               <p>
@@ -137,19 +197,19 @@
             <v-col cols="3" md="3">
               <v-container class="text-center">
                 <h1>100K</h1>
-                <p style="font-weight:300">Lorum Ipsum</p>
+                <p style="font-weight: 300">Lorum Ipsum</p>
               </v-container>
             </v-col>
             <v-col cols="3" md="3">
-              <v-container>
+              <v-container class="text-center">
                 <h1>100K</h1>
-                <p style="font-weight:300">Lorum Ipsum</p>
+                <p style="font-weight: 300">Lorum Ipsum</p>
               </v-container>
             </v-col>
           </v-row>
         </v-col>
         <v-col cols="6" md="6">
-          <v-container style="font-weight:300">
+          <v-container style="font-weight: 300">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of
@@ -161,7 +221,13 @@
 </template>
 
 <script>
+import { Carousel3d, Slide } from 'vue-carousel-3d'
+
 export default {
+  components: {
+    Carousel3d,
+    Slide,
+  },
   data: () => ({
     model: 0,
     colors: ['primary', 'secondary', 'yellow darken-2', 'red', 'orange'],
@@ -195,7 +261,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@500&family=Raleway:wght@500&display=swap');
 
 * {
-  font-family: 'Montserrat';
+  font: normal lighter bold 18px/25px Montserrat;
 }
 h1 {
   text-align: center;
@@ -205,6 +271,11 @@ h1 {
 }
 .section {
   min-height: 100vh;
+  position: relative;
+}
+.threeDCaroucel {
+  position: absolute;
+  bottom: 10%;
 }
 .section3 {
   min-height: 100vh;
@@ -229,36 +300,94 @@ h1 {
   min-height: 40vh;
   background: #e7e7e9;
 }
-.section6row{
-    padding-top: 7%;
+.section6row {
+  padding-top: 7%;
 }
-.section6 >>> h1{
-    font-weight: bolder;
+.section6 >>> h1 {
+  font-weight: bolder;
 }
 .details2Section {
   margin-top: 10%;
   padding-left: 20px;
   padding-right: 20px;
+  text-align: center;
+}
+.details5Section {
+  margin-top: 20%;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
 }
 .profileImage {
-  margin-right: 5px;
+  text-align: right;
+  margin-right: 2%;
+  margin-top: 10%;
+  /* padding-right: -100px; */
 }
 .profileImageLeft {
   margin-left: 5px;
-  margin-top: 50px;
+  margin-top: 20%;
+  text-align: left;
+}
+.section2Img {
+  height: 100px !important;
+  max-width: 100px !important;
+}
+.section2text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.threeDCaroucelSlide {
+  background: transparent;
+  border: none;
+  text-align: center;
+  border-radius: 25px;
+}
+.carousel-3d-slide.current {
+  border-radius: 25px !important;
+  border: 5px solid #000 !important;
+  filter: grayscale(0%);
+}
+.carousel-3d-slide.right-1 {
+  filter: grayscale(100%);
+  margin-top: 100px;
+  transform: translateX(550px) translateZ(-400px) rotateY(1deg) !important;
+}
+.carousel-3d-slide.right-2 {
+  filter: grayscale(100%);
+  margin-top: 100px;
+  transform: translateX(1100px) translateZ(-500px) rotateY(1deg) !important;
+}
+.carousel-3d-slide.left-1 {
+  filter: grayscale(100%);
+  margin-top: 100px;
+  transform: translateX(-550px) translateZ(-400px) rotateY(1deg) !important;
+}
+.carousel-3d-slide.left-2 {
+  filter: grayscale(100%);
+  margin-top: 100px;
+  transform: translateX(-1100px) translateZ(-500px) rotateY(1deg) !important;
 }
 .profileImage >>> img {
-  width: 100%;
+  min-width: 70%;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   border: 5px solid #000;
   border-right: none;
 }
 .profileImageLeft >>> img {
-  width: 100%;
+  min-width: 70%;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   border: 5px solid #000;
   border-left: none;
+}
+.threeDCaroucelSlide >>> img {
+  height: 100%;
+  object-fit: cover;
 }
 </style>
