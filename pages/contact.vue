@@ -60,7 +60,12 @@
       <v-row>
         <v-col cols="6" md="6" sm="12">
           <div class="details2Section">
-            <v-col cols="12" style="display: flex; flex-direction: row">
+            <v-col
+              cols="12"
+              md="6"
+              sm="12"
+              style="display: flex; flex-direction: row"
+            >
               <v-img
                 src="https://picsum.photos/500/300?image=3"
                 lazy-src="https://picsum.photos/10/6?image=3"
@@ -76,6 +81,8 @@
             </v-col>
             <v-col
               cols="12"
+              md="6"
+              sm="12"
               style="
                 display: flex;
                 flex-direction: row;
@@ -98,6 +105,8 @@
             </v-col>
             <v-col
               cols="12"
+              md="6"
+              sm="12"
               style="
                 display: flex;
                 flex-direction: row;
@@ -316,7 +325,7 @@ h1 {
   margin-top: 20%;
   padding-left: 20px;
   padding-right: 20px;
-  text-align: center;
+  /* text-align: center; */
 }
 .profileImage {
   text-align: right;
